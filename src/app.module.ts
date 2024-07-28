@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import dbConfig from './persistence/db-Config';
 import { PersistenceModule } from './persistence/persistence.module';
+import { TournamentModule } from './tournament/tournament.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { PersistenceModule } from './persistence/persistence.module';
       isGlobal: true,
     }),
     PersistenceModule,
+    TournamentModule,
   ],
   controllers: [AppController],
   providers: [AppService],
