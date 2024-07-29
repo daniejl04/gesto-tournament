@@ -10,8 +10,8 @@ import dbConfig from './db-Config';
           const { db, env } = configService;
           const uriDb =
             env === process.env.ENVIRONMENT
-              ? `${db.connection}${db.host}`
-              : `mongodb+srv://${db.user}:${db.password}@${db.cluster}.fdomenl.mongodb.net/`;
+              ? `${db.connection}${db.host}//${db.name}`
+              : `mongodb+srv://${db.user}:${db.password}@${db.cluster}.fdomenl.mongodb.net//${db.name}`;
           return {
             uri: uriDb,
           };
